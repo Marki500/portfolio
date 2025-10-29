@@ -1,0 +1,67 @@
+---
+import SectionTitle from './SectionTitle';
+
+const skills = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'React',
+  'Astro',
+  'Tailwind',
+  'PHP/WordPress',
+  'Node.js',
+  'Express',
+  'MySQL/MariaDB',
+  'Prisma (básico)',
+  'Docker',
+  'Apache/Nginx',
+  'Virtualmin/Plesk',
+  'Cloudflare',
+  'Figma/Photoshop (básico)',
+  'Vercel/Netlify'
+];
+---
+<section id="about" class="section-container section-padding">
+  <SectionTitle
+    client:load
+    eyebrow="Sobre mí"
+    title="Proactivo, resolutivo y orientado a resultados"
+    description="Proactivo, resolutivo y detallista; me gusta dejarlo todo perfecto y orientado a rendimiento y seguridad."
+  />
+  <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+    <div class="glass-card space-y-6 p-8">
+      <p class="text-base leading-relaxed text-white/70">
+        Durante los últimos 4 años he ayudado a marcas, agencias y emprendedores a llevar sus ideas al entorno digital.
+        Combino el desarrollo full-stack con la administración de servidores y herramientas cloud para entregar productos
+        seguros, escalables y con alto rendimiento.
+      </p>
+      <p class="text-base leading-relaxed text-white/70">
+        Me involucro en todo el ciclo de vida: arquitectura, diseño de sistemas, integración de IA, despliegues continuos y
+        soporte post-lanzamiento. Cada proyecto es una oportunidad para crear experiencias memorables.
+      </p>
+      <ul class="flex flex-wrap gap-3 text-sm text-white/70">
+        {skills.map((skill) => (
+          <li class="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+            {skill}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="relative flex justify-center">
+      <div class="absolute -inset-6 rounded-3xl bg-orb-gradient blur-3xl opacity-50" aria-hidden="true"></div>
+      <figure class="glass-card relative overflow-hidden p-6">
+        <img
+          src="/assets/profile/marc-portrait.svg"
+          alt="Retrato ilustrado de Marc Iglesias"
+          class="h-80 w-64 rounded-2xl object-cover"
+          width="512"
+          height="640"
+          loading="lazy"
+        />
+        <figcaption class="mt-4 text-sm text-white/60">
+          "Transforming ideas into digital experiences"
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
