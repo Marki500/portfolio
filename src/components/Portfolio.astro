@@ -1,0 +1,62 @@
+---
+import CardProject from './CardProject';
+import SectionTitle from './SectionTitle';
+
+const projects = [
+  {
+    title: 'Hovoc Agency',
+    tech: 'WordPress Headless, Next.js, Tailwind',
+    description: 'Sitio corporativo headless con animaciones WebGL y CMS totalmente editable para campañas multidioma.',
+    image: '/assets/projects/project-1.svg',
+    url: 'https://example.com/hovoc'
+  },
+  {
+    title: 'Pulse Analytics',
+    tech: 'React, Node.js, PostgreSQL',
+    description: 'Dashboard en tiempo real con pipelines ETL, visualizaciones a medida y despliegue en contenedores.',
+    image: '/assets/projects/project-2.svg',
+    url: 'https://example.com/pulse'
+  },
+  {
+    title: 'Aurora Travel',
+    tech: 'Astro, Tailwind, Stripe',
+    description: 'Landing de reservas con CMS ligero, checkout personalizado y optimización para Core Web Vitals.',
+    image: '/assets/projects/project-3.svg',
+    url: 'https://example.com/aurora'
+  },
+  {
+    title: 'Synkron App',
+    tech: 'React Native, Node.js',
+    description: 'Aplicación móvil para gestión de equipos con sincronización offline y notificaciones push.',
+    image: '/assets/projects/project-4.svg',
+    url: 'https://example.com/synkron'
+  },
+  {
+    title: 'Atlas Docs',
+    tech: 'WordPress, Gatsby, GraphQL',
+    description: 'Portal de documentación con búsqueda semántica, roles personalizados y hosting distribuido.',
+    image: '/assets/projects/project-5.svg',
+    url: 'https://example.com/atlas'
+  },
+  {
+    title: 'Flux Commerce',
+    tech: 'WooCommerce, React, Cloudflare Workers',
+    description: 'E-commerce escalable con catálogos dinámicos, automatización de stock y arquitectura edge.',
+    image: '/assets/projects/project-6.svg',
+    url: 'https://example.com/flux'
+  }
+];
+---
+<section id="portfolio" class="section-container section-padding">
+  <SectionTitle
+    client:load
+    eyebrow="Portfolio"
+    title="Proyectos seleccionados"
+    description="Una muestra de productos digitales creados con foco en rendimiento, escalabilidad y experiencias inmersivas."
+  />
+  <div class="section-grid">
+    {projects.map((project) => (
+      <CardProject client:load {...project} />
+    ))}
+  </div>
+</section>
