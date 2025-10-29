@@ -1,0 +1,116 @@
+---
+import SectionTitle from './SectionTitle';
+---
+<section id="contact" class="section-container section-padding">
+  <SectionTitle
+    client:load
+    eyebrow="Contacto"
+    title="¿Listo para construir algo juntos?"
+    description="Cuéntame sobre tu proyecto y te responderé en menos de 24 horas con ideas y próximos pasos."
+    align="center"
+  />
+  <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+    <form class="glass-card space-y-6 p-8" id="contact-form" novalidate>
+      <div class="space-y-2">
+        <label class="text-sm font-medium text-white" for="name">Nombre</label>
+        <input
+          class="focus-ring w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/40"
+          type="text"
+          id="name"
+          name="name"
+          placeholder="¿Cómo te llamas?"
+          required
+        />
+        <p class="hidden text-sm text-red-400" data-error="name">Este campo es obligatorio.</p>
+      </div>
+      <div class="space-y-2">
+        <label class="text-sm font-medium text-white" for="email">Email</label>
+        <input
+          class="focus-ring w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/40"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="hola@tuempresa.com"
+          required
+        />
+        <p class="hidden text-sm text-red-400" data-error="email">Introduce un email válido.</p>
+      </div>
+      <div class="space-y-2">
+        <label class="text-sm font-medium text-white" for="message">Mensaje</label>
+        <textarea
+          class="focus-ring h-32 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/40"
+          id="message"
+          name="message"
+          placeholder="Descríbeme brevemente tu proyecto, objetivos y plazos."
+          required
+        ></textarea>
+        <p class="hidden text-sm text-red-400" data-error="message">Cuéntame un poco más sobre lo que necesitas.</p>
+      </div>
+      <button type="submit" class="btn btn-primary w-full">Enviar mensaje</button>
+    </form>
+    <div class="glass-card flex flex-col justify-between gap-6 p-8">
+      <div>
+        <h3 class="text-2xl font-semibold text-white">¿Prefieres escribir directamente?</h3>
+        <p class="mt-3 text-sm text-white/70">
+          También puedes contactarme por email. Suelo responder rápido con propuestas concretas y un plan de acción.
+        </p>
+      </div>
+      <a class="btn btn-secondary focus-ring w-full justify-center" href="mailto:hola@marc-iglesias.dev">Enviar email</a>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 text-sm text-white/70">
+        <p class="font-semibold text-white">Disponibilidad</p>
+        <p>Actualmente abierto a proyectos de desarrollo integral y consultoría técnica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.querySelector('#contact-form');
+
+  form?.addEventListener('submit', (event) => {
+    const target = event.currentTarget;
+    if (!(target instanceof HTMLFormElement)) return;
+
+    const nameInput = target.querySelector('#name');
+    const emailInput = target.querySelector('#email');
+    const messageInput = target.querySelector('#message');
+
+    const nameError = target.querySelector('[data-error="name"]');
+    const emailError = target.querySelector('[data-error="email"]');
+    const messageError = target.querySelector('[data-error="message"]');
+
+    let isValid = true;
+
+    if (nameInput instanceof HTMLInputElement && nameError instanceof HTMLElement) {
+      if (!nameInput.value.trim()) {
+        nameError.classList.remove('hidden');
+        isValid = false;
+      } else {
+        nameError.classList.add('hidden');
+      }
+    }
+
+    if (emailInput instanceof HTMLInputElement && emailError instanceof HTMLElement) {
+      const emailPattern = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+      if (!emailPattern.test(emailInput.value)) {
+        emailError.classList.remove('hidden');
+        isValid = false;
+      } else {
+        emailError.classList.add('hidden');
+      }
+    }
+
+    if (messageInput instanceof HTMLTextAreaElement && messageError instanceof HTMLElement) {
+      if (messageInput.value.trim().length < 10) {
+        messageError.classList.remove('hidden');
+        isValid = false;
+      } else {
+        messageError.classList.add('hidden');
+      }
+    }
+
+    if (!isValid) {
+      event.preventDefault();
+    }
+  });
+</script>

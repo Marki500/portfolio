@@ -1,0 +1,75 @@
+---
+import Particles from './Particles';
+---
+<section id="home" class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <Particles client:load count={55} />
+  </div>
+  <div class="section-container flex min-h-[90vh] flex-col justify-center gap-12 py-24 lg:flex-row lg:items-center">
+    <div class="relative order-2 max-w-xl space-y-6 lg:order-1">
+      <div class="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm text-white/70">
+        <span class="inline-flex h-2 w-2 animate-ping rounded-full bg-cyanSoft"></span>
+        Disponible para nuevos proyectos
+      </div>
+      <h1 class="text-4xl font-display font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+        Transforming ideas into digital experiences
+      </h1>
+      <p class="text-lg leading-relaxed text-white/70">
+        Full-Stack Developer — WordPress, React, Node.js, Tailwind, Docker. Gestión técnica de servidores, hosting, dominios y
+        Cloudflare. Integración de IA.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#portfolio" class="btn btn-primary focus-ring">
+          Ver trabajos
+        </a>
+        <a href="#contact" class="btn btn-secondary focus-ring">
+          Contactar
+        </a>
+      </div>
+      <div class="glass-card mt-8 grid gap-6 p-6 sm:grid-cols-3">
+        <div>
+          <p class="text-sm text-white/60">Experiencia</p>
+          <p class="text-2xl font-semibold text-white">4+ años</p>
+        </div>
+        <div>
+          <p class="text-sm text-white/60">Stack</p>
+          <p class="text-base text-white/80">WordPress, React, Node.js, Astro, Tailwind</p>
+        </div>
+        <div>
+          <p class="text-sm text-white/60">Enfoque</p>
+          <p class="text-base text-white/80">Proactivo, resolutivo, obsesionado con el detalle.</p>
+        </div>
+      </div>
+    </div>
+    <div class="relative order-1 mx-auto w-full max-w-md lg:order-2">
+      <div class="absolute -inset-10 -z-10 animate-pulseGlow rounded-full bg-gradient-to-tr from-primary/40 via-transparent to-cyanSoft/20 blur-3xl"></div>
+      <div class="relative glass-card flex flex-col items-center gap-6 p-10 text-center">
+        <div class="relative">
+          <span class="absolute -left-6 -top-6 h-12 w-12 rounded-full bg-primary/40 blur-xl" aria-hidden="true"></span>
+          <img
+            src="/assets/profile/marc-portrait.svg"
+            alt="Retrato futurista de Marc Iglesias"
+            class="h-64 w-64 rounded-[2rem] object-cover"
+            width="512"
+            height="512"
+            loading="lazy"
+          />
+        </div>
+        <div class="space-y-2">
+          <p class="text-lg font-semibold text-white">Marc Iglesias Simón</p>
+          <p class="text-sm uppercase tracking-[0.4em] text-white/60">Full-Stack Developer</p>
+        </div>
+        <div class="grid w-full grid-cols-2 gap-4 text-sm text-white/70">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p class="font-semibold text-white">IA Integrations</p>
+            <p>Automatización + asistentes</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p class="font-semibold text-white">DevOps</p>
+            <p>Docker, Cloudflare, CI/CD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

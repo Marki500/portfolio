@@ -1,0 +1,70 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'Marc Iglesias — Full-Stack Developer',
+  description = 'Portfolio futurista de Marc Iglesias Simón, Full-Stack Developer especializado en WordPress, React, Node.js y DevOps.',
+  ogImage = '/assets/og-image.svg'
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content="https://marc-iglesias.dev" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#090b15" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Marc Iglesias Simón',
+        jobTitle: 'Full-Stack Developer',
+        description,
+        url: 'https://marc-iglesias.dev',
+        sameAs: [
+          'https://github.com/marc-iglesias',
+          'https://www.linkedin.com/in/marc-iglesias'
+        ],
+        skills: [
+          'HTML',
+          'CSS',
+          'JavaScript',
+          'React',
+          'Astro',
+          'Tailwind CSS',
+          'PHP',
+          'WordPress',
+          'Node.js',
+          'Express',
+          'MySQL',
+          'MariaDB',
+          'Prisma',
+          'Docker',
+          'Apache',
+          'Nginx',
+          'Virtualmin',
+          'Plesk',
+          'Cloudflare',
+          'Figma',
+          'Photoshop',
+          'Vercel',
+          'Netlify'
+        ]
+      })}
+    </script>
+  </head>
+  <body class="gradient-bg antialiased">
+    <slot />
+  </body>
+</html>

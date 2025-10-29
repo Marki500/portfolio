@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Contact from '../components/Contact.astro';
+---
+<BaseLayout>
+  <Nav />
+  <main class="space-y-16">
+    <Hero />
+    <Portfolio />
+    <Services />
+    <About />
+    <Testimonials />
+    <Contact />
+  </main>
+  <footer class="section-container pb-12 text-sm text-white/50">
+    <div class="glass-card flex flex-col items-center justify-between gap-4 rounded-3xl p-6 text-center sm:flex-row sm:text-left">
+      <p>© {new Date().getFullYear()} Marc Iglesias Simón. Todos los derechos reservados.</p>
+      <div class="flex items-center gap-4">
+        <a class="focus-ring hover:text-primary" href="https://github.com/marc-iglesias" aria-label="GitHub">
+          GitHub
+        </a>
+        <a class="focus-ring hover:text-primary" href="https://www.linkedin.com/in/marc-iglesias" aria-label="LinkedIn">
+          LinkedIn
+        </a>
+        <a class="focus-ring hover:text-primary" href="#contact">Aviso</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
